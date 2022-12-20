@@ -3,7 +3,6 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/inertia-react';
 
 export default function Dashboard(props) {
-    const test = "test"
     return (
         <AuthenticatedLayout
             auth={props.auth}

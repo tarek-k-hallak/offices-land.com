@@ -10,12 +10,31 @@ module.exports = {
     ],
 
     theme: {
+        fontFamily: {
+            primary: 'Tajawal',
+        },
+        container: {
+            padding: {
+                DEFAULT: '1.5rem',
+                // lg: '3rem',
+            },
+        },
+        screens: {
+            xxs: '0',
+            xs: '410px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+        },
         extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            colors: {
+                primary: '#224284',
+                accent: '#858d9a',
+                background: '#1B1C24',
+                hover: '#8F1F20',
             },
         },
     },
-
     plugins: [require('@tailwindcss/forms')],
 };
