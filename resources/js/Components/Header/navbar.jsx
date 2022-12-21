@@ -1,7 +1,7 @@
 import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
 
-import Logo from '../../../images/logo.png'
+import Logo from '../../../assets/logo.png'
 
 export default function NavBar({ children }) {
     return (
@@ -85,7 +85,7 @@ NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
 
 NavBar.DashboardButton = function NavBarDashboardButton({ URL, children }) {
     return (
-        <div className='hidden md:block ml-4 items-end text-base transition duration-300 text-white  hover:text-hover'>
+        <div className='hidden md:block ml-4 items-end text-base transition duration-300 text-white  hover:text-primary'>
             <Link href={URL}>
                 {children}
             </Link>

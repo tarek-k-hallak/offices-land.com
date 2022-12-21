@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
 export default function SlideNav({ children }) {
