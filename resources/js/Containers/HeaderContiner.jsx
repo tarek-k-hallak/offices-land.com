@@ -23,9 +23,9 @@ export default function HeaderContainer(props) {
                         </NavBar.List>
                         {props.auth.user
                             ?
-                            <DashboardButton URL={route('dashboard')}>
+                            <NavBar.DashboardButton URL={route('dashboard')}>
                                 لوحة التحكم
-                            </DashboardButton>
+                            </NavBar.DashboardButton>
                             :
                             <NavBar.LoginButton URL={route('dashboard')}>
                                 تسجيل الدخول
