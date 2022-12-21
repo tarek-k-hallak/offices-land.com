@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 export default function Info({ children }) {
     return (
-        <div className="z-20  w-[40%] mb-4 xl:mb-20 md:mr- 4 lg:mr-8 ">
+        <div className="z-20 w-full max-w-[1240px] mx-auto">
             {children}
         </div>
     )
@@ -10,7 +10,7 @@ export default function Info({ children }) {
 
 Info.Container = function InfoContainer({ children }) {
     return (
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end mx-2">
             {children}
         </div>
     )
@@ -36,7 +36,7 @@ Info.SubTitle = function InfoSubtitle({ children }) {
 Info.Button = function InfoButton({ slide_id, children }) {
     return (
         <Link href={`/products/${slide_id}`}>
-            <button className='w-24 h-10 bg-background text-accent rounded-xl mt-4 hover:opacity-50'>
+            <button className='w-24 h-10 bg-background text-accent rounded-xl mt-12 hover:opacity-50'>
                 {children}
             </button>
         </Link>
