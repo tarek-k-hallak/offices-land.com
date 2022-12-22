@@ -11,3 +11,7 @@
             #1b1c2471 95%,
             #1b1c24af 100%, #00102000);
 }
+
+.text-shadow-dark{
+    text-shadow: #15161C -1px -1px 10px;
+}

@@ -31,10 +31,12 @@ module.exports = {
             colors: {
                 primary: '#224284',
                 accent: '#858d9a',
-                background: '#1B1C24',
+                minorBackground: '#1B1C24',
+                majorBackground:'#15161C',
                 hover: '#8F1F20',
             },
         },
     },
     plugins: [require('@tailwindcss/forms')],
+    
 };

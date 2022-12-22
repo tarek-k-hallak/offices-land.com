@@ -19,15 +19,15 @@ Info.Container = function InfoContainer({ children }) {
 
 Info.Title = function InfoTitle({ children }) {
     return (
-        <h1 className="font-bold text-lg md:text-2xl lg:text-4xl text-primary text-right">
+        <p className="mb-4 font-bold text-lg md:text-2xl lg:text-4xl text-primary text-right text-shadow-dark">
             {children}
-        </h1>
+        </p>
     )
 }
 
 Info.SubTitle = function InfoSubtitle({ children }) {
     return (
-        <p className='hidden md:block text-xs md:text-sm lg:text-lg text-right text-accent mt-8'>
+        <p className='mb-4 hidden md:block text-xs md:text-sm lg:text-lg text-right text-accent'>
             {children}
         </p>
     )
@@ -36,7 +36,7 @@ Info.SubTitle = function InfoSubtitle({ children }) {
 Info.Button = function InfoButton({ slide_id, children }) {
     return (
         <Link href={`/products/${slide_id}`}>
-            <button className='w-24 h-10 bg-background text-accent rounded-xl mt-12 hover:opacity-50'>
+            <button className='w-20 h-8 bg-minorBackground text-accent rounded-lg hover:opacity-50'>
                 {children}
             </button>
         </Link>

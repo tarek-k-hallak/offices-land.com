@@ -8,7 +8,7 @@ export default function Header({ children }) {
 
 Header.Container = function HeaderContainer({ children }) {
     return (
-        <div className='bg-background h-[55px] md:h-[65px] lg:h-[75px] bg-opacity-0'>
+        <div className='bg-minorBackground h-[55px] md:h-[65px] lg:h-[75px]'>
             {children}
         </div>
     )

@@ -1,2 +1,3 @@
-export { default as HeaderContiner } from '../Containers/HeaderContiner'
-export { default as HeroContainer } from '../Containers/HeroContainer'
+export { default as HeaderContainer } from './HeaderContainer'
+export { default as HeroContainer } from './HeroContainer'
+export { default as FooterContainer } from './FooterContainer'

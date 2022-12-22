@@ -13,7 +13,7 @@ SlideNav.Container = function SlideNavContainer({ children, isSlideNavOpened }) 
     return (
         <nav
             className={`flex flex-col justify-between h-screen w-screen fixed right-0 ${isSlideNavOpened ? '' : "translate-x-full"} top-[50px] pb-[50px]
-            bg-background transition duration-500 ease-in-out transform`}>
+            bg-minorBackground transition duration-500 ease-in-out transform`}>
             {children}
         </nav>
     )
@@ -22,7 +22,7 @@ SlideNav.Container = function SlideNavContainer({ children, isSlideNavOpened }) 
 SlideNav.LoginButton = function SlideNavLoginButton({ URL, children }) {
     return (
         <Link href={URL} className="w-full mb-10">
-            <div className='text-sm w-[90%] m-auto py-1 mt-2 rounded-full border-2 border-accent bg-background text-white text-center'>
+            <div className='text-sm w-[90%] m-auto py-1 mt-2 rounded-full border-2 border-accent bg-minorBackground text-white text-center'>
                 {children}
             </div>
         </Link>
@@ -31,7 +31,7 @@ SlideNav.LoginButton = function SlideNavLoginButton({ URL, children }) {
 
 SlideNav.List = function SlideNavList({ children }) {
     return (
-        <ul className='flex flex-col items-end w-full mx-auto mt-6 bg-background rounded-lg'>
+        <ul className='flex flex-col items-end w-full mx-auto mt-6 bg-minorBackground rounded-lg'>
             {children}
         </ul>
     )

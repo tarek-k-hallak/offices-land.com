@@ -2,7 +2,7 @@ import slideImage from '../../../assets/products/1.jpg'
 
 export default function Hero({ children }) {
     return (
-        <section className='absolute top-0 bg-background w-full'>
+        <section className='bg-minorBackground w-full -mt-20'>
             {children}
         </section>
     )
