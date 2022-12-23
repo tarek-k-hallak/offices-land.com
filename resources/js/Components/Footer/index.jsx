@@ -1,8 +1,8 @@
 export default function Footer({ children }) {
     return (
-        <div className='w-full h-full bg-minorBackground'>
+        <section className='w-full h-full bg-minorBackground'>
             {children}
-        </div>
+        </section>
     )
 }
 

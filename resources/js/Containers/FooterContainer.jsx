@@ -1,7 +1,6 @@
 import { Footer, SocialMedia, CopyRight } from '../Components'
 
 export default function FooterContainer() {
-    console.log("footer")
     return (
         <>
             <Footer >

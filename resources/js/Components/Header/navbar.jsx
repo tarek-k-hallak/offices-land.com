@@ -63,9 +63,18 @@ NavBar.Item = function NavBarItem({ URL, children }) {
 //     )
 // }
 
+NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
+    return (
+        <select className='hidden md:block md:mr-auto ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
+            <option value="ar" className='duration-300'>العربية</option>
+            <option value="en" className='duration-300'>English</option>
+        </select>
+    )
+}
+
 NavBar.LoginButton = function NavBarLoginButton({ URL, children }) {
     return (
-        <div className='hidden md:block md:mr-auto font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
+        <div className='hidden md:block font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
             <Link href={URL}>
                 {children}
             </Link>
@@ -75,13 +84,14 @@ NavBar.LoginButton = function NavBarLoginButton({ URL, children }) {
 
 NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
     return (
-        <div className='hidden md:block ml-4 items-end text-base transition duration-300 text-accent  hover:text-primary'>
+        <div className='hidden md:block ml-4 text-base transition duration-300 text-accent  hover:text-primary'>
             <Link href={URL}>
                 {children}
             </Link>
         </div>
     )
 }
+
 
 NavBar.DashboardButton = function NavBarDashboardButton({ URL, children }) {
     return (

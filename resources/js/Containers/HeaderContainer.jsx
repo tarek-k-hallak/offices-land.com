@@ -1,5 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { NavBar, SlideNav, Header } from '../Components'
+
+import { HeaderData } from '../fixtures/WelcomeData'
 
 export default function HeaderContainer(props) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)
@@ -15,20 +17,21 @@ export default function HeaderContainer(props) {
                         />
                         <NavBar.Logo />
                         <NavBar.List>
-                            <NavBar.Item URL={'/'}>الرئيسية</NavBar.Item>
-                            <NavBar.Item URL={'/about'}>عن الشركة</NavBar.Item>
-                            <NavBar.Item URL={'/products'}>المنتجات</NavBar.Item>
-                            <NavBar.Item URL={'/catalog'}>الكتالوج</NavBar.Item>
-                            <NavBar.Item URL={'/contact'}>اتصل بنا</NavBar.Item>
+                            <NavBar.Item URL={'/'}>{HeaderData.homeText}</NavBar.Item>
+                            <NavBar.Item URL={'/about'}>{HeaderData.aboutusText}</NavBar.Item>
+                            <NavBar.Item URL={'/products'}>{HeaderData.productsText}</NavBar.Item>
+                            <NavBar.Item URL={'/catalog'}>{HeaderData.catalogText}</NavBar.Item>
+                            <NavBar.Item URL={'/contact'}>{HeaderData.contactusText}</NavBar.Item>
                         </NavBar.List>
+                        <NavBar.SelectLang />
                         {props.auth.user
                             ?
                             <NavBar.DashboardButton URL={route('dashboard')}>
-                                لوحة التحكم
+                                {HeaderData.dashboardText}
                             </NavBar.DashboardButton>
                             :
                             <NavBar.LoginButton URL={route('dashboard')}>
-                                تسجيل الدخول
+                                {HeaderData.signinText}
                             </NavBar.LoginButton>
                         }
                     </NavBar.Container>
@@ -36,11 +39,11 @@ export default function HeaderContainer(props) {
                 <SlideNav>
                     <SlideNav.Container isSlideNavOpened={isSlideNavOpened}>
                         <SlideNav.List >
-                            <SlideNav.Item URL={'/'}>الرئيسية</SlideNav.Item>
-                            <SlideNav.Item URL={'/about'}>عن الشركة</SlideNav.Item>
-                            <SlideNav.Item URL={'/products'}>المنتجات</SlideNav.Item>
-                            <SlideNav.Item URL={'/catalog'}>الكتالوج</SlideNav.Item>
-                            <SlideNav.Item URL={'/contact'}>اتصل بنا</SlideNav.Item>
+                            <SlideNav.Item URL={'/'}>{HeaderData.homeText}</SlideNav.Item>
+                            <SlideNav.Item URL={'/about'}>{HeaderData.aboutusText}</SlideNav.Item>
+                            <SlideNav.Item URL={'/products'}>{HeaderData.productsText}</SlideNav.Item>
+                            <SlideNav.Item URL={'/catalog'}>{HeaderData.catalogText}</SlideNav.Item>
+                            <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
                         </SlideNav.List>
                         <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
                     </SlideNav.Container>
