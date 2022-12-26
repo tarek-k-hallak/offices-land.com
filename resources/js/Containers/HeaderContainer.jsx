@@ -39,13 +39,18 @@ export default function HeaderContainer(props) {
                 <SlideNav>
                     <SlideNav.Container isSlideNavOpened={isSlideNavOpened}>
                         <SlideNav.List >
-                            <SlideNav.Item URL={'/'}>{HeaderData.homeText}</SlideNav.Item>
-                            <SlideNav.Item URL={'/about'}>{HeaderData.aboutusText}</SlideNav.Item>
-                            <SlideNav.Item URL={'/products'}>{HeaderData.productsText}</SlideNav.Item>
-                            <SlideNav.Item URL={'/catalog'}>{HeaderData.catalogText}</SlideNav.Item>
-                            <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
+                            <SlideNav.Label>
+                                <SlideNav.Item URL={'/'}>{HeaderData.homeText}</SlideNav.Item>
+                                <SlideNav.Item URL={'/about'}>{HeaderData.aboutusText}</SlideNav.Item>
+                                <SlideNav.Item URL={'/products'}>{HeaderData.productsText}</SlideNav.Item>
+                                <SlideNav.Item URL={'/catalog'}>{HeaderData.catalogText}</SlideNav.Item>
+                                <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
+                            </SlideNav.Label>
+
+                            <SlideNav.SelectLang >اللغة</SlideNav.SelectLang>
+
+                            <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
                         </SlideNav.List>
-                        <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
                     </SlideNav.Container>
                 </SlideNav>
             </Header.Container>

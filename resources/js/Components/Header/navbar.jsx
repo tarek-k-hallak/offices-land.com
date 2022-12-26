@@ -1,11 +1,12 @@
 import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
 
-import Logo from '../../../assets/logo.png'
+import ApplicationLogo from '@/Components/ApplicationLogo'
+import Dropdown from '@/Components/Dropdown';
 
 export default function NavBar({ children }) {
     return (
-        <div className='mx-auto max-w-[1240px]'>
+        <div className='mx-auto max-w-7xl'>
             {children}
         </div>
     )
@@ -24,12 +25,9 @@ NavBar.Logo = function NavBarLogo({ URL }) {
     return (
         <Link href={URL} >
             <div className='flex flex-row items-center'>
-                <img className="w-10 md:w-12 lg:w-14 md:ml-6 mr-2 "
-                    src={Logo}
-                    alt="STGO">
-                </img>
+                <ApplicationLogo className={"h-12 md:h-16 lg:h-20"} />
                 <div className='flex flex-col items-center'>
-                    <p className='text-xl text-primary font-bold uppercase'> Offices Land</p>
+                    <p className='text-base md:text-xl text-primary font-bold uppercase'> Offices Land</p>
                     <p className='hidden md:block text-xs text-accent font-semibold uppercase'>Your first choice</p>
                 </div>
             </div >
@@ -39,7 +37,7 @@ NavBar.Logo = function NavBarLogo({ URL }) {
 
 NavBar.List = function NavBarList({ children }) {
     return (
-        <ul className='hidden md:flex flex-row-reverse gap-4'>
+        <ul className='hidden md:flex flex-row-reverse items-center gap-4'>
             {children}
         </ul>
     )
@@ -65,10 +63,35 @@ NavBar.Item = function NavBarItem({ URL, children }) {
 
 NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
     return (
-        <select className='hidden md:block md:mr-auto ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
-            <option value="ar" className='duration-300'>العربية</option>
-            <option value="en" className='duration-300'>English</option>
-        </select>
+        <Dropdown className='hidden md:block md:mr-auto ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
+            <Dropdown.Trigger>
+                <span className="inline-flex ">
+                    <button className="inline-flex items-center text-base px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
+                        <svg
+                            className="mr-2 -ml-0.5 h-4 w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                fillRule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                        (العربية)/ اللغة
+                    </button>
+                </span>
+            </Dropdown.Trigger>
+
+            <Dropdown.Content align='right' width='w-40' className="bg-minorBackground mt-3">
+                <Dropdown.Link href={route('logout')} method="post" as="button" className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
+                    العربية
+                </Dropdown.Link>
+                <Dropdown.Link href={route('logout')} method="post" as="button" className="text-right text-accent hover:bg-majorBackground">
+                    English
+                </Dropdown.Link>
+            </Dropdown.Content>
+        </Dropdown>
     )
 }
 
@@ -95,7 +118,7 @@ NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
 
 NavBar.DashboardButton = function NavBarDashboardButton({ URL, children }) {
     return (
-        <div className='hidden md:block md:mr-auto font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
+        <div className='hidden md:block font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
             <Link href={URL}>
                 {children}
             </Link>

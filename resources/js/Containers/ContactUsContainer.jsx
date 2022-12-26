@@ -1,10 +1,36 @@
+import { useState } from 'react'
 import { ContactUs, SendUs, Address } from '../Components'
 
 export default function ContactUsContainer() {
-    const submitMassage = function(e) {
+    const [contactUsData, setContectUsData] = useState({
+        name: '',
+        phone: '',
+        country: {},
+        email: '',
+        message: '',
+    })
+
+    const submitMassage = function (e) {
         e.preventDefault()
+        console.log(contactUsData)
     }
-    
+
+    const onChangeForm = function (e, name, phoneValue, phoneCountry, phoneFormattedValue) {
+        if (name != "phone") {
+            const { value } = e.target
+            setContectUsData({
+                ...contactUsData,
+                [name]: value
+            })
+        } else {
+            setContectUsData({
+                ...contactUsData,
+                phone: phoneValue,
+                country: phoneCountry,
+            })
+        }
+    }
+
     return (
         <ContactUs>
             <ContactUs.Container>
@@ -13,13 +39,24 @@ export default function ContactUsContainer() {
                         <SendUs.Container>
                             <SendUs.Name
                                 type={"text"}
-                                placeholder={"NAME"} />
+                                label={"Name"}
+                                value={contactUsData.name}
+                                onChange={onChangeForm} />
+                            <SendUs.Phone
+                                type={"phone"}
+                                label={"Phone"}
+                                value={contactUsData.phone}
+                                onChange={onChangeForm} />
                             <SendUs.Email
                                 type={"email"}
-                                placeholder={"EMAIL"} />
+                                label={"Email"}
+                                value={contactUsData.email}
+                                onChange={onChangeForm} />
                             <SendUs.Message
                                 type={"text"}
-                                placeholder={"MESSAGE"} />
+                                label={"Message"}
+                                value={contactUsData.message}
+                                onChange={onChangeForm} />
                             <SendUs.Submit>Submit</SendUs.Submit>
                         </SendUs.Container>
                     </SendUs.Form>

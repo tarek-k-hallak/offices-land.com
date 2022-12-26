@@ -1,4 +1,5 @@
-import React from 'react'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 export default function SendUs({ children }) {
     return (
@@ -17,7 +18,6 @@ SendUs.Container = function SendUsContainer({ children }) {
 }
 
 SendUs.Form = function SendUsForm({ children, onSubmit }) {
-
     return (
         <form onSubmit={(e) => onSubmit(e)}>
             {children}
@@ -25,33 +25,61 @@ SendUs.Form = function SendUsForm({ children, onSubmit }) {
     )
 }
 
-SendUs.Name = function SendUsName({ type, name, value, placeholder }) {
+SendUs.Name = function SendUsName({ type, name, value, label, onChange }) {
     return (
-        <input className='w-full mb-4 h-10 p-2 rounded-lg text-sm lg:text-lg text-left'
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeholder} />
+        <div className='mb-4'>
+            <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
+            <input className='w-full h-10 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground'
+                type={type}
+                name={name}
+                value={value}
+                onChange={(e) => onChange(e, "name")} />
+        </div>
     )
 }
 
-SendUs.Email = function SendUsName({ type, name, value, placeholder }) {
+SendUs.Email = function SendUsName({ type, name, value, label, onChange }) {
     return (
-        <input className='w-full mb-4 h-10 p-2 rounded-lg text-sm lg:text-lg text-left'
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeholder} />
+        <div className='mb-4'>
+            <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
+            <input className='w-full h-10 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground active:shadow-none'
+                type={type}
+                name={name}
+                value={value}
+                onChange={(e) => onChange(e, "email")} />
+        </div>
     )
 }
 
-SendUs.Message = function SendUsMessage({ type, name, value, placeholder }) {
+SendUs.Phone = function SendUsPhone({ type, name, value, label, onChange }) {
     return (
-        <textarea className='w-full mb-4 h-40 p-2 rounded-lg text-sm lg:text-lg text-left'
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeholder} />
+        <div className='mb-4'>
+            <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
+            <PhoneInput
+                inputStyle={{ width: "100%", backgroundColor: "#15161C", color: "#858d9a", borderColor: '#858d9a' }}
+                buttonStyle={{ backgroundColor: "#15161C", borderColor: '#858d9a' }}
+                dropdownStyle={{ backgroundColor: "#15161C", color: "#858d9a" }}
+                containerStyle={{}}
+                country={'sa'}
+                type={type}
+                name={name}
+                value={value}
+                onChange={(value, country, e, formattedValue) => onChange(e, "phone", value, country, formattedValue)} />
+        </div>
+    )
+}
+
+
+SendUs.Message = function SendUsMessage({ type, name, value, label, onChange }) {
+    return (
+        <div className='mb-4'>
+            <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
+            <textarea className='w-full h-40 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground'
+                type={type}
+                name={name}
+                value={value}
+                onChange={(e) => onChange(e, "message")} />
+        </div>
     )
 }
 
