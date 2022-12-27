@@ -33,28 +33,33 @@ export default function ContactUsContainer() {
 
     return (
         <ContactUs>
+            <ContactUs.Title>CONTACT US</ContactUs.Title>
             <ContactUs.Container>
                 <SendUs>
                     <SendUs.Form onSubmit={submitMassage}>
                         <SendUs.Container>
-                            <SendUs.Name
+                            <SendUs.Input
                                 type={"text"}
                                 label={"Name"}
+                                name={"name"}
                                 value={contactUsData.name}
                                 onChange={onChangeForm} />
                             <SendUs.Phone
                                 type={"phone"}
                                 label={"Phone"}
+                                name={"phone"}
                                 value={contactUsData.phone}
                                 onChange={onChangeForm} />
-                            <SendUs.Email
+                            <SendUs.Input
                                 type={"email"}
                                 label={"Email"}
+                                name={"email"}
                                 value={contactUsData.email}
                                 onChange={onChangeForm} />
-                            <SendUs.Message
+                            <SendUs.Textarea
                                 type={"text"}
                                 label={"Message"}
+                                name={"message"}
                                 value={contactUsData.message}
                                 onChange={onChangeForm} />
                             <SendUs.Submit>Submit</SendUs.Submit>

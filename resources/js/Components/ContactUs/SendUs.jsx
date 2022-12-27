@@ -25,31 +25,20 @@ SendUs.Form = function SendUsForm({ children, onSubmit }) {
     )
 }
 
-SendUs.Name = function SendUsName({ type, name, value, label, onChange }) {
+SendUs.Input = function SendUsInput({ type, name, value, label, onChange }) {
     return (
         <div className='mb-4'>
             <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
-            <input className='w-full h-10 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground'
+            <input className='w-full h-10 p-2 text-sm lg:text-lg text-left text-accent bg-majorBackground border-accent focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 rounded-md shadow-sm '
                 type={type}
                 name={name}
                 value={value}
-                onChange={(e) => onChange(e, "name")} />
+                onChange={(e) => onChange(e, name)} />
         </div>
     )
 }
 
-SendUs.Email = function SendUsName({ type, name, value, label, onChange }) {
-    return (
-        <div className='mb-4'>
-            <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
-            <input className='w-full h-10 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground active:shadow-none'
-                type={type}
-                name={name}
-                value={value}
-                onChange={(e) => onChange(e, "email")} />
-        </div>
-    )
-}
+
 
 SendUs.Phone = function SendUsPhone({ type, name, value, label, onChange }) {
     return (
@@ -59,7 +48,7 @@ SendUs.Phone = function SendUsPhone({ type, name, value, label, onChange }) {
                 inputStyle={{ width: "100%", backgroundColor: "#15161C", color: "#858d9a", borderColor: '#858d9a' }}
                 buttonStyle={{ backgroundColor: "#15161C", borderColor: '#858d9a' }}
                 dropdownStyle={{ backgroundColor: "#15161C", color: "#858d9a" }}
-                containerStyle={{}}
+                inputClass="bg-majorBackground border-accent focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 rounded-md shadow-sm"
                 country={'sa'}
                 type={type}
                 name={name}
@@ -70,11 +59,11 @@ SendUs.Phone = function SendUsPhone({ type, name, value, label, onChange }) {
 }
 
 
-SendUs.Message = function SendUsMessage({ type, name, value, label, onChange }) {
+SendUs.Textarea = function SendUsTextarea({ type, name, value, label, onChange }) {
     return (
         <div className='mb-4'>
             <label className='ml-2 text-accent bg-majorBackground'>{label}</label>
-            <textarea className='w-full h-40 p-2 rounded-lg text-sm lg:text-lg text-left text-accent bg-majorBackground'
+            <textarea className='w-full h-40 p-2 text-sm lg:text-lg text-left text-accent bg-majorBackground border-accent focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50 rounded-md shadow-sm '
                 type={type}
                 name={name}
                 value={value}
